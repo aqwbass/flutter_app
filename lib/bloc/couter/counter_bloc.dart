@@ -41,5 +41,4 @@ class CounterBloc extends Bloc<CounterEvent , int>{
     print(error) ;
     super.onError(error, stackTrace);
   }
-
 }

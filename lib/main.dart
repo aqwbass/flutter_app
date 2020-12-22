@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boc/bloc/counter_bloc.dart';
-import 'package:flutter_boc/bloc/counter_page.dart';
+import 'package:flutter_boc/bloc/couter/counter_bloc.dart';
+import 'package:flutter_boc/bloc/fruad/fruad_bloc.dart';
+import 'package:flutter_boc/models/fruad/fruad_model.dart';
+import 'package:flutter_boc/widgets/counter/counter_page.dart';
+import 'package:flutter_boc/widgets/home.dart';
+import 'package:flutter_boc/models/fruad/fruads.dart';
 
 void main() async {
 //  Bloc.observer = SimpleBlocObserver() ;
@@ -10,16 +16,28 @@ void main() async {
 //  c.close() ;
 
   WidgetsFlutterBinding.ensureInitialized();
+  final jsonA = json.decode("{\"Fname\":\"A\",\"Lname\":\"Buaget\"}") ;
+  final jsonB = json.decode("{\"Fname\":\"B\",\"Lname\":\"Buaget\"}") ;
+  FruadModel f1 = FruadModel.fromJson(jsonA) ;
+  FruadModel f2 = FruadModel.fromJson(jsonB) ;
+  FrudsModel f = new FrudsModel([f1,f2]) ;
   runApp(
-    BlocProvider<CounterBloc>(
-      create: (context) => CounterBloc(10),
+    MultiBlocProvider(
+        providers: [
+          BlocProvider<CounterBloc>(
+              create: (context) => CounterBloc(10),
+          ),
+          BlocProvider<FruadBloc>(
+            create: (context) => FruadBloc(f),
+          ),
+        ],
       child: MaterialApp(
         title: 'couter',
         theme: ThemeData(brightness: Brightness.dark),
-        home: CounterPage(),
+        home: MultipageApphomeState(),
       ),
-    ),
-  );
+    )
+    );
 }
 //enum CounterEvent { increment }
 //class CounterBloc extends Bloc<CounterEvent , int> {
