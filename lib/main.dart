@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boc/counter_bloc.dart';
-import 'package:flutter_boc/counter_page.dart';
+import 'package:flutter_boc/bloc/counter_bloc.dart';
+import 'package:flutter_boc/bloc/counter_page.dart';
 
 void main() async {
 //  Bloc.observer = SimpleBlocObserver() ;
