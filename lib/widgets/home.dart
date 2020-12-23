@@ -1,4 +1,5 @@
 import 'package:flutter_boc/widgets/fruad/fruad_page.dart';
+import 'package:flutter_boc/widgets/portfolio/portfolio_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _MultipageApphomeState extends State<MultipageApphomeState>{
   final List<Widget> tabs = [
     CounterPage(),
     FruadPage(),
-    CounterPage(),
+    PortfolioPage(),
     CounterPage(),
   ];
 

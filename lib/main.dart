@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boc/bloc/couter/counter_bloc.dart';
 import 'package:flutter_boc/bloc/fruad/fruad_bloc.dart';
+import 'package:flutter_boc/bloc/portfolio/portfolio_bloc.dart';
 import 'package:flutter_boc/models/fruad/fruad_model.dart';
 import 'package:flutter_boc/widgets/counter/counter_page.dart';
 import 'package:flutter_boc/widgets/home.dart';
@@ -29,6 +30,9 @@ void main() async {
           ),
           BlocProvider<FruadBloc>(
             create: (context) => FruadBloc(f),
+          ),
+          BlocProvider<PortfolioBloc>(
+            create: (context) => PortfolioBloc(),
           ),
         ],
       child: MaterialApp(
