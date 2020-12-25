@@ -5,6 +5,7 @@ import 'package:flutter_boc/bloc/portfolio/portfolio_bloc.dart';
 import 'package:flutter_boc/models/portfolio/market_index.dart';
 import 'package:flutter_boc/widgets/portfolio/widgets/content/portfolio_index.dart';
 import 'package:flutter_boc/widgets/widgets/empty_screen.dart';
+import 'package:flutter_boc/widgets/widgets/loading_indicator.dart';
 
 class PortfolioStonksSection extends StatelessWidget{
   @override
@@ -39,6 +40,10 @@ class PortfolioStonksSection extends StatelessWidget{
             ],
           );
         }
+        return Padding(
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height /3),
+          child: LoadingIndicatorWidget(),
+        );
       }
       );
     }

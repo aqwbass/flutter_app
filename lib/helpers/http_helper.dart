@@ -14,5 +14,9 @@ class FetchClient{
     });
     return await Dio().getUri(uri) ;
   }
+  Future<Response> CovidModelRequest(String endpoint) async{
+    final Uri uri = Uri.https('covid19.th-stat.com', endpoint);
+    return await Dio().getUri(uri) ;
+  }
 
 }

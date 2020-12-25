@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boc/bloc/couter/counter_bloc.dart';
+import 'package:flutter_boc/bloc/covid/covid_bloc.dart';
 import 'package:flutter_boc/bloc/fruad/fruad_bloc.dart';
 import 'package:flutter_boc/bloc/portfolio/portfolio_bloc.dart';
 import 'package:flutter_boc/models/fruad/fruad_model.dart';
@@ -33,6 +34,9 @@ void main() async {
           ),
           BlocProvider<PortfolioBloc>(
             create: (context) => PortfolioBloc(),
+          ),
+          BlocProvider<CovidBloc>(
+            create: (context) => CovidBloc(),
           ),
         ],
       child: MaterialApp(

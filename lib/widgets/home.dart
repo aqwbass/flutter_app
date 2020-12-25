@@ -1,3 +1,4 @@
+import 'package:flutter_boc/widgets/covid/covid_page.dart';
 import 'package:flutter_boc/widgets/fruad/fruad_page.dart';
 import 'package:flutter_boc/widgets/portfolio/portfolio_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -17,7 +18,7 @@ class _MultipageApphomeState extends State<MultipageApphomeState>{
     CounterPage(),
     FruadPage(),
     PortfolioPage(),
-    CounterPage(),
+    CovidPage(),
   ];
 
   @override
@@ -55,11 +56,11 @@ class _MultipageApphomeState extends State<MultipageApphomeState>{
       ),
       GButton(
         icon: FontAwesomeIcons.search,
-        text: 'test2',
+        text: 'portfolio',
       ),
       GButton(
         icon: FontAwesomeIcons.globeAmericas,
-        text: 'test3',
+        text: 'covid',
       ),
     ];
   }
